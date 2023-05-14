@@ -1,0 +1,8 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" placeholder="Name..." name="name" id="name">
+    <input type="text" placeholder="Price..." name="price" id="price">
+    <input type="text" placeholder="Description..." name="description" id="description">
+    <input type="file" accept="image/*" name="upload" id="upload">
+    <button type="submit" name="Add Item" value="Add Item">Add Item</button>
+</form>
