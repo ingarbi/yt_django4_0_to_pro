@@ -8,6 +8,9 @@
 			<p class="mt-5">{{ item.name }}</p>
 			<p class="mt-5 text-green-500">$ {{ item.price | intcomma }}</p>
 			<p class="mt-5 text-gray-600">{{ item.description }}</p>
+			<button class="bg-green-500 text-white mt-[50px]"><a href="{% url 'myapp:update_item' item.id %}">Update Item</a></button>
 		</div>
+		
 	</div>
+	
 {% endblock content %}
