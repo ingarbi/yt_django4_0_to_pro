@@ -45,3 +45,4 @@ def delete_item(request, my_id):
         return redirect("/myapp/")
     context = {"item": item}
     return render(request, "myapp/deleteitem.html", context)
+
