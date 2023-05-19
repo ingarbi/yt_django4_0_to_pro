@@ -564,6 +564,10 @@ video {
   margin: 2.5rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -671,6 +675,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-28 {
+  width: 7rem;
 }
 
 .max-w-6xl {
@@ -995,6 +1003,10 @@ video {
 
   .lg\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:px-8 {

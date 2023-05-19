@@ -8,6 +8,8 @@
 			<p class="mt-5">{{ item.name }}</p>
 			<p class="mt-5 text-green-500">$ {{ item.price | intcomma }}</p>
 			<p class="mt-5 text-gray-600">{{ item.description }}</p>
+			<p class="mt-5 text-gray-600">@{{ item.seller }}</p>
+			<p class="mt-5 text-gray-600">{{ item.seller.profile.contact_number }}</p>
 			<button class="bg-green-500 text-white mt-[50px]"><a href="{% url 'myapp:update_item' item.id %}">Update Item</a></button>
 			<button class="bg-red-500 text-white mt-[50px]"><a href="{% url 'myapp:delete_item' item.id %}">Delete Item</a></button>
 		</div>
