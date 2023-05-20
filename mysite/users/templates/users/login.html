@@ -12,6 +12,7 @@
             <p class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{form.password}}</p>
         </div>
         <button class="bg-green-500 text-white px-5 py-2" type="submit">Login</button>
+        <button class="bg-sky-600 text-white px-5 py-2"><a href="{% url 'users:register' %}">Register?</a></button>
     </form>
 </div>
 {% endblock content %}

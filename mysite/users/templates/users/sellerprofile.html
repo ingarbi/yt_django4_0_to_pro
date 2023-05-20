@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+<div class="grid p-10 grid-cols-1 lg:grid-cols-3 sm:grid-cols-1">
+    <div class="rounded shadow-lg">
+        <div>
+            {% if  user.profile.image %}
+                <img src="{{ seller.profile.image.url }}">
+            {% endif %}
+            
+        </div>
+        <h1 class="font-bold text-xl m-2">{{ seller.username }}</h1>
+    </div>
+</div>
+{% endblock content %}

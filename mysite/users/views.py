@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from .models import Profile
 from .forms import NewUserForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 def register(request):
@@ -26,3 +27,13 @@ def profile(request):
         profile = Profile(user=user, contact_number=contact_number, image=image)
         profile.save()
     return render(request, "users/profile.html")
+
+
+def seller_profile(request, id):
+    seller = User.objects.get(id=id)
+
+    context = {
+        'seller': seller
+    }
+
+    return render(request, 'users/sellerprofile.html', context)
