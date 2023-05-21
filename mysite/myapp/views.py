@@ -5,12 +5,21 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 
 
-# def index(request):
-#     items = Product.objects.all()
-#     context = {"items": items}
-#     return render(request, "myapp/index.html", context)
+def index(request):
+    page_obj = items = Product.objects.all()
+
+    item_name = request.GET.get('search')
+    if item_name != '' and item_name is not None:
+        page_obj = items.filter(name__icontains=item_name)
+
+    paginator = Paginator(page_obj, 2)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'page_obj': page_obj}
+    return render(request, "myapp/index.html", context)
 
 
 class ProductListView(ListView):
