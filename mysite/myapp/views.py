@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Product
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
 
 
 # def index(request):
@@ -62,3 +64,7 @@ def delete_item(request, my_id):
         return redirect("/myapp/")
     context = {"item": item}
     return render(request, "myapp/deleteitem.html", context)
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy("myapp:index")
