@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product
+from .models import Product, OrderDetail
 
 
 admin.site.site_header = "My Django App"
@@ -18,3 +18,4 @@ class ProductAdmin(admin.ModelAdmin):
         queryset.update(price=0)
 
 admin.site.register(Product, ProductAdmin)
+admin.site.register(OrderDetail)
