@@ -1,5 +1,4 @@
-# Project Name
-Django Ecommerce 
+# Django Ecommerce 
 
 ## About
 Django Ecommerce приложение для покупок электроники онлайн с возможностью оплаты.
